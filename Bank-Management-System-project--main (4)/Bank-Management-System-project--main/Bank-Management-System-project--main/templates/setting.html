@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+
+  <title> Dashboard- E-Bank</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../static//img/favicon.png" rel="icon">
+  <link href="../static//img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../static//vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static//vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../static//vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../static//vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="../static//vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="../static//vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../static//vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../static//css/style.css" rel="stylesheet">
+
+  <style>
+    .col-12 {
+      margin-bottom: 20px;
+    }
+
+    .card {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      background-color: #fff;
+    }
+
+    .card-title {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .card-body {
+      font-size: 16px;
+      color: #555;
+    }
+
+    .card-body table {
+      width: 100%;
+    }
+
+    .card-body table td {
+      padding: 10px;
+    }
+
+    .card-body input[type="text"],
+    .card-body input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .card-body input[type="submit"] {
+      background-color: #007bff;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .card-body input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="#" class="logo d-flex align-items-center">
+        <img src="../static//img/logo bank.jpg" alt="">
+        <span class="d-none d-lg-block">E-Bank</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+    <aside>
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{{ url_for('userhome') }}">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="{{ url_for('myaccount') }}">
+          <i class="bi bi-menu-button-wide"></i><span>Myaccount</span></i>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="{{ url_for('transaction') }}">
+          <i class="bi bi-menu-button-wide"></i><span>Transaction</span></i>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="{{ url_for('mobile') }}">
+          <i class="bi bi-menu-button-wide"></i><span>Mobile Recharge</span></i>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="{{ url_for('funds') }}">
+          <i class="bi bi-menu-button-wide"></i><span>Funds Transfer</span></i>
+        </a>
+      </li>
+
+       <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="{{ url_for('setting') }}">
+          <i class="bi bi-menu-button-wide"></i><span>Setting</span></i>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="{{ url_for('logout') }}">
+          <i class="bi bi-menu-button-wide"></i><span>Logout</span></i>
+        </a>
+      </li>
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+        <div class="row">
+          <div class="col-lg-12">
+            <h3 class="page-header"><i class="fa fa-laptop"><h3><i> Welcome to Setting Page </i></h3>
+          </div>
+          <hr>
+        </div>
+
+    <section class="section dashboard">
+      <div class="row">
+
+        <!-- Left side columns -->
+        <div class="col-lg-8">
+          <div class="col-lg-8">
+
+                <h8><i class="fa fa-map-marker red"></i><strong>Welcome back
+                  <span style="color:magenta"><u> {{ session['youremail'] }}</u>
+                  </span> to E-Bank </strong></h8>
+
+                <div class="panel-actions">
+                  <a href="index.html#" class="btn-setting"><i class="fa fa-rotate-right"></i></a>
+                  <a href="index.html#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
+                  <a href="index.html#" class="btn-close"><i class="fa fa-times"></i></a>
+                </div>
+              </div>
+
+              </div>
+
+
+
+            <!-- Reports -->
+            <div class="col-12">
+              <div class="card">
+
+
+                <div class="card-body">
+                  <h5 class="card-title">E-Bank <span>Relation beyond banking</span></h5>
+
+                 <div class="panel-body-map">
+                <h3> Change Your Password </h3>
+                <form method="post" action="/changePassword">
+                  <table>
+                    <tr>
+                      <td>
+                        Email ID
+                      </td>
+                      <td> <input type="text" name="temail" required /> </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Enter Old Password
+                      </td>
+                      <td> <input type="password" name="toldp" required /> </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Enter New Password
+                      </td>
+                      <td> <input type="password" name="tnewp1" required /> </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Re-enter New Password
+                      </td>
+                      <td> <input type="password" name="tnewp2" required /> </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+
+                      </td>
+                      <td> <input type="submit" value="Update Password" /> </td>
+                    </tr>
+                  </table>
+                </form>
+                <div id="map" style="height:380px;"></div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+       </section>
+      <div class="text-right">
+
+      </div>
+    </section>
+                </div>
+
+              </div>
+            </div><!-- End Reports -->
+    </section>
+
+  </main><!-- End #main -->
+<footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>E-Bank</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+      <a>Designed by Ajay Kumar T N | Bhuvan M | Arun Sheelvanth | Aryan P</a>
+    </div>
+  </footer><!-- End Footer -->
+</body>
+</html>

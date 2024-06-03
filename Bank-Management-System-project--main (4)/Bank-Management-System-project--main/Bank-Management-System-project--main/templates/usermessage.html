@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Dashboard- E-Bank</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../static//img/favicon.png" rel="icon">
+  <link href="../static//img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../static//vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static//vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../static//vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../static//vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="../static//vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="../static//vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../static//vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../static//css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="https://desired-url.com" class="logo d-flex align-items-center">
+        <img src="../static//img/logo bank.jpg" alt="">
+        <span class="d-none d-lg-block">E-Bank</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+    
+  </header><!-- End Header -->
+  
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      </li><!-- End Dashboard Nav -->
+      <li class="nav-item">
+        <a class="" href="{{ url_for('userhome') }}">
+          <i class="bi bi-person"></i>
+          <span>Userhome</span>
+        </a>
+      </li><!-- End Profile Page Nav -->
+
+      <li class="nav-item">
+        <a class="" href="{{ url_for('myaccount') }}">
+          <i class="bi bi-question-circle"></i>
+          <span>Myaccount</span>
+        </a>
+      </li><!-- End F.A.Q Page Nav -->
+
+      <li class="nav-item">
+        <a class="" href="{{ url_for('transaction') }}">
+          <i class="bi bi-envelope"></i>
+          <span>Transaction</span>
+        </a>
+      </li><!-- End Contact Page Nav -->
+
+      <li class="nav-item">
+        <a class="" href="{{ url_for('mobile') }}">
+          <i class="bi bi-card-list"></i>
+          <span>Mobile Recharge</span>
+        </a>
+      </li><!-- End Register Page Nav -->
+
+        <li class="nav-item">
+        <a class="" href="{{ url_for('funds') }}">
+          <i class="bi bi-dash-circle"></i>
+          <span>Funds</span>
+        </a>
+      </li><!-- End Error 404 Page Nav -->
+
+      <li class="nav-item">
+       <a class="" href="{{ url_for('setting') }}">
+          <i class="bi bi-file-earmark"></i>
+          <span>Setting</span>
+        </a>
+      </li><!-- End Blank Page Nav -->
+
+      <li class="nav-item">
+        <a class="" href="{{ url_for('logout') }}">
+          <i class="bi bi-file-earmark"></i>
+          <span>Logout</span>
+        </a>
+
+    </ul>
+
+
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+     <div class="row">
+          <div class="col-lg-12">
+            <h3 class="page-header"><i class="fa fa-laptop"></i> Dashboard</h3>
+            <ol class="breadcrumb">
+              <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
+              <li><i class="fa fa-laptop"></i>Dashboard</li>
+
+            </ol>
+          </div>
+        </div>
+
+        <div class="row">
+            <h3> Welcome to Home Page </h3>
+        </div>
+
+
+    <section class="section dashboard">
+      <div class="row">
+
+        <!-- Left side columns -->
+        <div class="col-lg-8">
+
+
+
+            <!-- Reports -->
+            <div class="col-12">
+              <div class="card">
+
+                <div class="card-body">
+                  <h5 class="card-title">E-Bank <span>Relation beyond banking</span></h5>
+                  <br>
+                  <hr>
+                  <h1> {{ message }} </h1>
+
+                </div>
+
+
+          </div>
+        </div><!-- End Left side columns -->
+
+
+
+
+
+            </div>
+          </div><!-- End News & Updates -->
+
+        </div><!-- End Right side columns -->
+
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+</body>
